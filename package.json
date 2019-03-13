@@ -1,0 +1,17 @@
+{
+  "name": "generators",
+  "version": "1.0.0",
+  "description": "Simple examples of ES6 generators",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "JavaScript",
+    "ES6",
+    "Generators",
+    "example"
+  ],
+  "author": "Ted Hille <tedhille@gmail.com>",
+  "license": "ISC"
+}
