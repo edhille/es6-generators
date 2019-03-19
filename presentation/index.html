@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section
+					data-background-image="./img/image1.jpg"
+					data-background-size="contain"
+					data-background-opacity=".5">
+					<h1>ES6 Generators</h1>
+					<h3>a gentle introduction</h3>
+				</section>
+				<section>
+					<h3>What is a generator?</h3>
+					<quote>
+						Also known as semicoroutines, generators are a special, weaker case of coroutines,
+						in that they always yield control back to the caller rather than specifying
+						a coroutine to jump to
+					</quote>
+				</section>
+				<section>
+					<h3>Syntax</h3>
+					<pre><code data-trim data-noescape>
+						function* someGenerator() {
+							yield 'some value';
+							return 'some possible value';
+						}
+						function * someOtherGenerator() { /* ... */ }
+						function *yetAnotherGenerator() { /* ... */ }
+					</code></pre>
+				</section>
+				<section>
+					<h3>The Generator Object</h3>
+					<pre><code data-trim data-noescape>
+						const gen = someGenerator();
+						const step = gen.next(); // { value: any, done: boolean }
+						gen.throw(); // ???
+						gen.return(); // ???
+					</code></pre>
+				</section>
+				<section>
+					<h3>Simple Example</h3>
+					<p>
+						TBD: show code?
+					</p>
+				</section>
+				<section>
+					<h3>Exceptions</h3>
+					<p>
+						TBD: show code?
+					</p>
+				</section>
+				<section>
+					<h3>Passing/Returning values</h3>
+					<p>
+						TBD: show code?
+					</p>
+				</section>
+				<section>
+					<h3>Await Implementation</h3>
+					<p>
+						TBD: show code?
+					</p>
+				</section>
+				<section>
+					<h3>References</h3>
+					<ol>
+						<li><a href="https://en.wikipedia.org/wiki/Coroutine#Comparison_with_generators">Wikipedia Definition</a></li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator">MDN</a></li>
+						<li><a href="https://codeburst.io/what-are-javascript-generators-and-how-to-use-them-c6f2713fd12e">What are JavaScript Generators and how to use them</a></li>
+						<li><a href="https://codeburst.io/javascript-generator-yield-next-async-await-e428b0cb52e4">Javascript - Generator-Yield/Next & Async-Await</a></li>
+						<li><a href="https://hackernoon.com/async-await-generators-promises-51f1a6ceede2">Async-Await ≈ Generators + Promises</a></li>
+					</ol>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
