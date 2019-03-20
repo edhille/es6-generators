@@ -4,7 +4,15 @@
   "description": "Simple examples of ES6 generators",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "01": "node examples/01-intro.js",
+    "02": "node examples/02-for-of.js",
+    "03": "node examples/03-internal-exception.js",
+    "04": "node examples/04-external-exception.js",
+    "05": "node examples/05-passing-values.js",
+    "06": "node examples/06-returning-value.js",
+    "07": "node examples/07-yielding-promises.js",
+    "08": "node examples/08-generators-calling-generators.js"
   },
   "keywords": [
     "JavaScript",
