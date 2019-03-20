@@ -5,10 +5,12 @@ function* promiseGen() {
 
 const gen = promiseGen();
 let step = gen.next();
+console.log(step);
 step.value.then((val => {
 	console.log(val);
 }));
 step = gen.next();
+console.log(step);
 step.value.then((val => {
 	console.log(val);
 }));
