@@ -8,6 +8,8 @@ function* inner() {
 	yield 'two';
 	return 'three';
 }
+
+console.log('running simple, nested generator that returns a value...');
 for (let value of outer()) {
 	console.log(value);
 }
@@ -28,9 +30,10 @@ function* innerGenerator() {
 	return 'inner return';
 }
 
-// const gen = outerGenerator();
-// let step = gen.next();
-// while (!step.done) {
-// 	console.log(step);
-// 	step = gen.next();
-// }
+console.log("\nrunning nested generator that has state...");
+const gen = outerGenerator();
+let step = gen.next();
+while (!step.done) {
+	console.log(step);
+	step = gen.next();
+}
