@@ -1,11 +1,12 @@
 function* outer() {
 	yield* inner();
-	yield* inner();
-	yield 'outer';
+	const retVal = yield* inner();
+	yield `outer: ${retVal}`;
 }
 function* inner() {
 	yield 'one';
 	yield 'two';
+	return 'three';
 }
 for (let value of outer()) {
 	console.log(value);

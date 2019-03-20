@@ -29,7 +29,7 @@
 			<section data-background-image="./img/image1.jpg" data-background-size="contain"
 				data-background-opacity=".5">
 				<h1>ES6 Generators</h1>
-				<h3>a gentle introduction</h3>
+				<h6>An introduction to the thing that looks like <code>function*</code></h6>
 			</section>
 			<section>
 				<h3>What is a generator?</h3>
@@ -113,7 +113,7 @@
 						try {
 							const generator = generatorThatThrows();
 							console.log(generator.next()); // { value: 'yielding', done: false }
-							console.log(generator.next());
+							console.log(generator.next()); // never will get here...
 						} catch (e) {
 							console.log(e.message); // I'm bad
 						}
@@ -130,7 +130,7 @@
 							const generator = generatorThatDoesNotThrow();
 							console.log(generator.next()); // { value: 'yielding', done: false }
 							generator.throw(new Error("You're bad"));
-							console.log(generator.next());
+							console.log(generator.next()); // never will get here...
 						} catch (e) {
 							console.log(e.message); // You're bad
 						}
@@ -199,12 +199,13 @@
 				<pre><code data-trim data-noescape>
 					function* outer() {
 						yield* inner();
-						yield* inner();
-						yield 'outer';
+						const retVal = yield* inner();
+						yield `outer: ${retVal}`;
 					}
 					function* inner() {
 						yield 'one';
 						yield 'two';
+						return 'three';
 					}
 					for (let value of outer()) {
 						console.log(value);
@@ -225,6 +226,7 @@
 							- Generator-Yield/Next & Async-Await</a></li>
 					<li><a href="https://hackernoon.com/async-await-generators-promises-51f1a6ceede2">Async-Await ≈
 							Generators + Promises</a></li>
+					<li><a href="https://davidwalsh.name/es6-generators-dive">Diving Deeper With ES6 Generators</a></li>
 				</ol>
 			</section>
 		</div>
